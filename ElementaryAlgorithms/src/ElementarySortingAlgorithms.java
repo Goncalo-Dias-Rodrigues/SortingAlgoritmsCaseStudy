@@ -1,4 +1,5 @@
 import java.util.Random;
+import java.util.Scanner;
 
 public class ElementarySortingAlgorithms {
 
@@ -23,34 +24,53 @@ public class ElementarySortingAlgorithms {
     }
 
     public static void main(String[] args) {
-        ElementarySortingAlgorithms algorithms = new ElementarySortingAlgorithms();
-        int[] array = new int[1000];
+
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Which elementary algoritms you want to use? 1 - Bubble sort");
+        int choice = scanner.nextInt();
+        System.out.println("Which array size you want to use?");
+        int size = scanner.nextInt();
+        ElementarySortingAlgorithms algortims = new ElementarySortingAlgorithms();
+        Random random = new Random();
+
         double averageNS = 0;
         double averageSC = 0;
-        double averageMIN = 0;
+        double averageMS = 0;
 
-        for (int i = 0; i < 1000; i++) {
-            for (int j = 0; j < 1000; j++) {
-                Random random = new Random();
+        for (int i = 0; i < 100; i++) {
+            int[] array = new int[size];
+
+            for (int j = 0; j < array.length; j++) {
                 array[j] = random.nextInt(0, 1001);
             }
 
-            long startTime = System.nanoTime();
-            algorithms.bubbleSort(array);
-            long endTime = System.nanoTime();
+            long startTime;
+            long endTime;
+
+            switch (choice) {
+                case (1):
+                    startTime = System.nanoTime();
+                    algortims.bubbleSort(array);
+                    endTime = System.nanoTime();
+                    break;
+                default:
+                    startTime = System.nanoTime();
+                    algortims.bubbleSort(array);
+                    endTime = System.nanoTime();
+                    break;
+            }
+
             double durationNano = endTime - startTime;
             double durationSeconds = durationNano / 1_000_000_000.0;
-            double durationMinutes = durationSeconds / 60.0;
+            double durationMillis = durationNano / 1_000_000.0;
 
             averageNS += durationNano;
             averageSC += durationSeconds;
-            averageMIN += durationMinutes;
+            averageMS += durationMillis;
         }
 
-        System.out.println("Sorting took, on average, " + averageNS/1000 + " ns");
-        System.out.println("Sorting took, on average, " + averageSC/1000 + " sec");
-        System.out.println("Sorting took, on average, " + averageMIN/1000 + " min");
-
-
+        System.out.println("Sorting took, on average, " + averageNS/100 + " ns");
+        System.out.println("Sorting took, on average, " + averageSC/100 + " sec");
+        System.out.println("Sorting took, on average, " + averageMS/100 + " ms");
     }
 }

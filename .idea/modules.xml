@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/AdvancedAlgoritms/AdvancedAlgoritms.iml" filepath="$PROJECT_DIR$/AdvancedAlgoritms/AdvancedAlgoritms.iml" />
       <module fileurl="file://$PROJECT_DIR$/ElementaryAlgorithms/ElementaryAlgorithms.iml" filepath="$PROJECT_DIR$/ElementaryAlgorithms/ElementaryAlgorithms.iml" />
+      <module fileurl="file://$PROJECT_DIR$/InterestingSortingAlgorithms/InterestingSortingAlgorithms.iml" filepath="$PROJECT_DIR$/InterestingSortingAlgorithms/InterestingSortingAlgorithms.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/SortingAlgoritmsCaseStudy.iml" filepath="$PROJECT_DIR$/.idea/SortingAlgoritmsCaseStudy.iml" />
     </modules>
   </component>
