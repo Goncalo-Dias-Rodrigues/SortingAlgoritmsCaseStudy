@@ -3,7 +3,12 @@ import java.util.Scanner;
 
 public class ElementarySortingAlgorithms {
 
-    public void bubbleSort(int[] array){
+    /**
+     * This is my implementation of the Bubble Sort algorithm.
+     * It isn't meant to be optimal.
+     * @param array array to be sorted
+     */
+    public static void myBubbleSort(int[] array){
         int numberOfSwaps = 0;
         int originalNumberOfSwaps = numberOfSwaps;
         int temp;
@@ -30,7 +35,6 @@ public class ElementarySortingAlgorithms {
         int choice = scanner.nextInt();
         System.out.println("Which array size you want to use?");
         int size = scanner.nextInt();
-        ElementarySortingAlgorithms algortims = new ElementarySortingAlgorithms();
         Random random = new Random();
 
         double averageNS = 0;
@@ -50,12 +54,12 @@ public class ElementarySortingAlgorithms {
             switch (choice) {
                 case (1):
                     startTime = System.nanoTime();
-                    algortims.bubbleSort(array);
+                    myBubbleSort(array);
                     endTime = System.nanoTime();
                     break;
                 default:
                     startTime = System.nanoTime();
-                    algortims.bubbleSort(array);
+                    myBubbleSort(array);
                     endTime = System.nanoTime();
                     break;
             }
