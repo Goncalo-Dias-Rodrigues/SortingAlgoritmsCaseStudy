@@ -5,7 +5,7 @@ public class Client {
     public static void main(String[] args) {
 
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Which elementary algoritms you want to use? 1 - Bubble sort");
+        System.out.println("Which elementary algoritms you want to use? 1 - My Bubble sort, 2 - Optimal Bubble Sort");
         int choice = scanner.nextInt();
         System.out.println("Which array size you want to use?");
         int size = scanner.nextInt();
@@ -29,6 +29,10 @@ public class Client {
                     ElementarySortingAlgorithms.myBubbleSort(array);
                     endTime = System.nanoTime();
                     break;
+                case (2):
+                    startTime = System.nanoTime();
+                    ElementarySortingAlgorithms.opBubbleSort(array);
+                    endTime = System.nanoTime();
                 default:
                     startTime = System.nanoTime();
                     ElementarySortingAlgorithms.myBubbleSort(array);
